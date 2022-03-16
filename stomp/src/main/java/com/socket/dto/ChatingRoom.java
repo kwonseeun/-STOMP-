@@ -46,4 +46,10 @@ public class ChatingRoom {
 		public String toString() {
 			return "ChatingRoom [roomNumber=" + roomNumber + ", roomName=" + roomName + ", users=" + users + "]";
 		}
+		public ChatingRoom(String roomNumber, String roomName, LinkedList<String> users) {
+			super();
+			this.roomNumber = roomNumber;
+			this.roomName = roomName;
+			this.users = users;
+		}
 }

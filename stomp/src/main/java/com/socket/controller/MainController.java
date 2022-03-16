@@ -37,7 +37,7 @@ public class MainController {
 	
 	// 방 번호로 방 찾기
 	public ChatingRoom findRoom(String roomNumber) {
-		ChatingRoom room = new ChatingRoom();
+		ChatingRoom room = new ChatingRoom(roomNumber, roomNumber, new LinkedList<>());
 		
 		room.setRoomNumber(roomNumber);
 		
@@ -162,7 +162,7 @@ public class MainController {
 		
 		// 방을 만들고 채팅방목록에 추가
 		String roomNumber = UUID.randomUUID().toString();
-		ChatingRoom chatingRoom = new ChatingRoom();
+		ChatingRoom chatingRoom = new ChatingRoom(roomNumber, roomNumber, new LinkedList<>());
 				chatingRoom.setRoomNumber(roomNumber);
 				chatingRoom.setUsers(new LinkedList<>());
 				chatingRoom.setRoomName(roomName);
@@ -252,8 +252,6 @@ public class MainController {
 			return new ResponseEntity<>(map2, HttpStatus.OK);
 		}
 	}
-	
-	
 	
 	//	----------------------------------------------------
 	// 메세지 컨트롤러
